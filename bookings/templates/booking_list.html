@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking List</title>
+</head>
+
+<body>
+
+    <h1>All Bookings</h1>
+
+    <h3>Welcome, {{ user.username }}</h3>
+
+    <a href="{% url 'add_booking' %}">Add Booking</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+
+    <br><br>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Sl. No.</th>
+            <th>Customer Name</th>
+            <th>Event Date</th>
+            <th>Hall Name</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+
+        {% for booking in bookings %}
+
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ booking.customer_name }}</td>
+            <td>{{ booking.event_date }}</td>
+            <td>{{ booking.hall_name }}</td>
+            <td>{{ booking.phone }}</td>
+
+            <td>
+                <a href="{% url 'edit_booking' booking.id %}">
+                    Edit
+                </a>
+
+                |
+
+                <a href="{% url 'delete_booking' booking.id %}">
+                    Delete
+                </a>
+            </td>
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="6">No bookings available</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

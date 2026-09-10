@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Hall Booking System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 50px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Wedding Hall Booking System</h1>
+
+    <p>
+        Welcome to the Wedding Hall Booking System.
+        You can add and manage wedding hall bookings easily.
+    </p>
+
+    <a href="{% url 'add_booking' %}" class="btn">
+        Add Booking
+    </a>
+
+    <a href="{% url 'booking_list' %}" class="btn">
+        View Bookings
+    </a>
+
+    <footer>
+        ZIUKE INFOTECH (OPC) PRIVATE LIMITED - 2026
+    </footer>
+
+</body>
+</html>

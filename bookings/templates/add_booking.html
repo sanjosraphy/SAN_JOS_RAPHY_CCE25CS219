@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Booking</title>
+</head>
+
+<body>
+
+    <h1>Add New Booking</h1>
+
+    <form method="POST" onsubmit="return validateForm()">
+
+        {% csrf_token %}
+
+        <label>Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name">
+        <br><br>
+
+        <label>Event Date:</label>
+        <input type="text" id="event_date" name="event_date">
+        <br><br>
+
+        <label>Hall Name:</label>
+        <input type="text" id="hall_name" name="hall_name">
+        <br><br>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <br><br>
+
+        <button type="submit">Add Booking</button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'home' %}">Home</a>
+
+    <script>
+        function validateForm() {
+
+            let customer = document.getElementById("customer_name").value;
+            let date = document.getElementById("event_date").value;
+            let hall = document.getElementById("hall_name").value;
+            let phone = document.getElementById("phone").value;
+
+            if (customer == "" || date == "" || hall == "" || phone == "") {
+                alert("Please fill all fields");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
