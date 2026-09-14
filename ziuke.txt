@@ -1,0 +1,6 @@
+zuike comments
+
+cannot add new account it shows an operational error,need to improve the UI , 
+
+
+before pushing changes to git run "git pull" command.
